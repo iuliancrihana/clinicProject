@@ -1,0 +1,4 @@
+class spec{
+public:
+	spec();
+};
