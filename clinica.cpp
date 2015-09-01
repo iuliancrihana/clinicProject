@@ -1,2 +1,7 @@
 #include"clinica.h"
-clinica clinica::theClinic=null;
+
+
+clinica::clinica(){;}
+char* clinica::getTipInstitutie(){
+	return "clinica";
+}

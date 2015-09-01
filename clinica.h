@@ -1,15 +1,20 @@
 #include"listaTemp.h"
 #include"spec.h"
-class clinica{
-private: 
+
+#include<iostream>
+
+#pragma once
+using namespace std;
+class institutie{
+public:
+	virtual char* getTipInstitutie()=0;
+};
+class clinica: public institutie{
+protected: 
 	char* mNumeClinica;
 	int mNrSpec;
-	listaTemp<spec> mListaSpecializari;
-	static clinica* theClinic;							//singleton
+	listaTemp<spec>* mListaSpecializari;
 public:
-	static clinica creazaInstanta(){
-		if(theClinic==null)
-			theClinic=new clinica();
-		return theClinic;
-	}
+	clinica();
+	virtual char* getTipInstitutie();
 };

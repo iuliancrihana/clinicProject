@@ -1,5 +1,8 @@
 #include<iostream>
+
+#pragma once
 using namespace std;
+
 
 ////////////////////////////////////////element din lista////////////////////////////////////////
 
@@ -10,6 +13,7 @@ class elemLista {
 public:
 	elemLista ();
 	elemLista (T e);
+	elemLista (char* denumire);
     T getElemValue ();
 	void setNextElem(elemLista<T>* oldHead);
 	elemLista<T>* getNextElem ();
@@ -28,21 +32,33 @@ elemLista<T>* elemLista<T>::getNextElem ()
 {
 	return mNextElem;
 }
+
 template <class T>
 void elemLista<T>::setNextElem(elemLista<T>* oldHead)
 {
 	mNextElem=oldHead;
 }
+
 template <class T>
 elemLista<T>::elemLista(){
 	this->mElem=NULL;
 	this->mNextElem=NULL;
 }
+
 template <class T>
 elemLista<T>::elemLista(T e){
 	this->mElem=new T(e);
 	this->mNextElem=NULL;
 }
+
+template <>
+elemLista<spec>::elemLista(char* denumire){
+	char* numeSpec=new char[strlen(denumire)+1];
+	strcpy(numeSpec, denumire);
+	this->mElem=new spec(denumire);
+	this->mNextElem=NULL;
+}
+
 /*-------------------------------specific pentru o clasa----------------------*/
 //template <>
 //elemLista<int>::elemLista(int e){
