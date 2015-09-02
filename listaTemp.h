@@ -1,8 +1,8 @@
+#pragma once
+
 #include<iostream>
 
-#pragma once
 using namespace std;
-
 
 ////////////////////////////////////////element din lista////////////////////////////////////////
 
@@ -13,7 +13,6 @@ class elemLista {
 public:
 	elemLista ();
 	elemLista (T e);
-	elemLista (char* denumire);
     T getElemValue ();
 	void setNextElem(elemLista<T>* oldHead);
 	elemLista<T>* getNextElem ();
@@ -51,20 +50,6 @@ elemLista<T>::elemLista(T e){
 	this->mNextElem=NULL;
 }
 
-template <>
-elemLista<spec>::elemLista(char* denumire){
-	char* numeSpec=new char[strlen(denumire)+1];
-	strcpy(numeSpec, denumire);
-	this->mElem=new spec(denumire);
-	this->mNextElem=NULL;
-}
-
-/*-------------------------------specific pentru o clasa----------------------*/
-//template <>
-//elemLista<int>::elemLista(int e){
-//	this->mElem=new int(5);
-//	this->mNextElem=NULL;
-//}
 /////////////////////////////////////////////lista//////////////////////////////////////////////
 template <class T> 
 class listaTemp{
@@ -74,7 +59,7 @@ private:
 public:
 	listaTemp();
 	listaTemp(T elemNou);
-	T* getHead(){ return head; }
+	elemLista<T>* getHead(){ return head; }
 	int getLungimeLista(){ return lungimeLista; }
 	void adaugElem(T elemNou);
 	void stergElem(T elem);
