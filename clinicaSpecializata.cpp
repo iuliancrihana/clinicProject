@@ -1,4 +1,4 @@
-#include"clinicaSpecializata.h"
+/*#include"clinicaSpecializata.h"
 
 clinicaSpecializata::clinicaSpecializata():clinica(){
 	char inputString[50];
@@ -11,3 +11,9 @@ clinicaSpecializata::clinicaSpecializata():clinica(){
 	cin>>inputString;
 	elemLista <spec>* newSpec=new elemLista <spec>(inputString);
 }
+
+char* clinicaSpecializata::getTipInstitutie(){
+	return "clinica specializata";
+}
+
+*/
