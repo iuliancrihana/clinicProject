@@ -1,9 +1,10 @@
+#pragma once
+
 #include"listaTemp.h"
 #include <iostream>
 #include <fstream>
 #include <string>
 
-#pragma once
 using namespace std;
 
 class spec{
@@ -12,8 +13,12 @@ class spec{
 public:
 	spec();
 	spec(char* numeSpec);
+	spec(spec& cSpec);
+	listaTemp<char*>* getListaMedici(){return mMediciSpecialisti;}
 	char* getNumeSpec();
 	void addMedic(char* numeDoctor);
 	void incarcaMediciDinFisier(char* fileName);
 	void afiseazaListaMedici();
+
+	bool operator==(spec& elemDeComparat);
 };
